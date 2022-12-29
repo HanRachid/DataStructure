@@ -6,9 +6,9 @@ export class BalancedBST {
     this.array = array;
     this.root = root;
   }
-  buildTree(): number[] {
+  buildTree(): number {
     let sizeofArray = this.array.length;
     let middle = Math.floor((sizeofArray - 1) / 2);
-    return this.array;
+    return this.array[middle];
   }
 }
