@@ -16,4 +16,4 @@ jobs:
           cache: "npm"
           cache-dependency-path: package-lock.json
       - run: npm ci
-      - run: node run test
+      - run: npx vitest run tests
