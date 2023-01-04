@@ -1,7 +1,7 @@
 import "./style.css";
 import typescriptLogo from "./typescript.svg";
 import { setupCounter } from "./counter";
-
+import { BalancedBST } from "./Tree/BalancedBST/BalancedBST";
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   <div>
     <a href="https://vitejs.dev" target="_blank">
@@ -21,3 +21,21 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
 `;
 
 setupCounter(document.querySelector<HTMLButtonElement>("#counter")!);
+let testtree = new BalancedBST([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+
+testtree.prettyPrint();
+console.log(testtree.depth(4));
+
+console.log(testtree.isBalanced());
+
+testtree.insert(12);
+testtree.insert(10);
+testtree.insert(11);
+console.log(testtree.isBalanced());
+
+testtree.prettyPrint();
+
+testtree.reBalance();
+
+testtree.prettyPrint();
+console.log(testtree.isBalanced());

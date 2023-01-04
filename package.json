@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 4000",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "test": "vitest tests",
@@ -12,8 +12,32 @@
   },
   "devDependencies": {
     "@vitest/coverage-c8": "^0.26.2",
+    "ndb": "^1.1.5",
     "typescript": "^4.9.3",
     "vite": "^4.0.0",
     "vitest": "^0.26.2"
-  }
+  },
+  "dependencies": {
+    "chromium": "^3.0.3",
+    "puppeteer": "^19.4.1"
+  },
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Current Test File",
+      "autoAttachChildProcesses": true,
+      "skipFiles": [
+        "<node_internals>/**",
+        "**/node_modules/**"
+      ],
+      "program": "${workspaceRoot}/node_modules/vitest/vitest.mjs",
+      "args": [
+        "run",
+        "${relativeFile}"
+      ],
+      "smartStep": true,
+      "console": "integratedTerminal"
+    }
+  ]
 }
