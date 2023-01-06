@@ -3,6 +3,7 @@ import typescriptLogo from "./typescript.svg";
 import { setupCounter } from "./counter";
 import { BalancedBST } from "./Tree/BalancedBST/BalancedBST";
 import { LinkedList } from "./Lists/LinkedList";
+import { Knight } from "./KnightTravails/Knight";
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
 <div>
 <a href="https://vitejs.dev" target="_blank">
@@ -22,7 +23,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
 `;
 
 setupCounter(document.querySelector<HTMLButtonElement>("#counter")!);
-let testtree = new BalancedBST([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+/* let testtree = new BalancedBST([1, 2, 3, 4, 5, 6, 7, 8, 9]);
 
 testtree.prettyPrint();
 console.log(testtree.depth(4));
@@ -46,3 +47,10 @@ testlist.append(2);
 testlist.append(3);
 testlist.prepend(3);
 console.log(testlist.toString());
+ */
+
+///// knight
+
+let knight = new Knight();
+
+knight.Knightmoves([3, 2], [1, 7]);
